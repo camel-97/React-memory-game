@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import getRandomPokemon from "./pokemon-fetcher";
+import shuffle from "./array-shuffle";
 import './grid.css'
+
 
 export default function Grid() {
 
@@ -16,6 +18,12 @@ export default function Grid() {
         setCards(newCards);
     }
 
+    function shuffleHandler(){
+        const shuffled = [...cards]
+        const shufArray = shuffle(shuffled)
+        setCards(shufArray)
+    }
+
     useEffect(() => { loadCards() }, [])
 
     return (
@@ -23,7 +31,9 @@ export default function Grid() {
             {cards.map(card => (
                     <div className="card" key={card.id}>
                         <div className="poke-img">
-                            <img src={card.pokeUrl} />
+                            <img src={card.pokeUrl} onClick={
+                                shuffleHandler
+                            }/>
                         </div>
                     </div>
                 )
