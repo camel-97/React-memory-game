@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import getRandomPokemon from './pokemon-fetcher'
+import Grid from './card-grid'
 import './App.css'
 
 function App() {
-    getRandomPokemon();
+  return (
+    <Grid></Grid>
+  )
 }
 
 export default App
