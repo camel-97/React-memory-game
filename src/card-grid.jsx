@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import getRandomPokemon from "./pokemon-fetcher"
+import getRandomPokemon from "./pokemon-fetcher";
+import './grid.css'
 
 export default function Grid() {
 

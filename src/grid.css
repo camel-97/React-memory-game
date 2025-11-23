@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* ✅ responsive */
+  max-width: 640px;       /* ✅ fits 4 cards max (4 x 150px + gap) */
+  margin: 0 auto;         /* ✅ center horizontally */
+  min-height: 100vh;      /* ✅ center vertically */
+  place-items: center;    /* ✅ clean center alignment */
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  background: rgb(199, 145, 145);
+  border: 2px solid #444;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.poke-img img {
+  object-fit: contain;
+  scale: 1.5;
+}
