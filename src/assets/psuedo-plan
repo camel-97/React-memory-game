@@ -1,0 +1,26 @@
+Memory Game: psuedo
+
+Overview: 
+    12 cards, each with an image
+    grid layout. 
+    score counter
+    high score counter
+
+Game: 
+    On click of any image +1 point
+    any further clicks to 'unclicked' images +1 point
+    you lose when you click the same image twice
+    On Every click, Grid is randomized.
+
+logic: 
+    imges stored in array
+    function to randomize array
+    each image has state:
+        fasle -> onclick -> true = +1
+        useEffect() -> shuffle IMPORTANT: Loading of cards is the sideEffect here
+        true -> onclick -> score becomes high score -> reset.
+        
+state: 
+    [{PokeUrl: URL, clicked: false}, ... ]
+
+
