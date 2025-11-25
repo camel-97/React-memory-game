@@ -1,21 +1,19 @@
+
 .grid {
   display: grid;
-  gap: 60px;
-  padding: 20px;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* ✅ responsive */
-  max-width: 760px;       /* ✅ fits 4 cards max (4 x 150px + gap) */
-  margin: 0 auto;        
-  min-height: 100vh;      
+  margin: 35px;
+  margin-left: 80px;
+  gap: 40px;
+
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  max-width: 660px;       
   place-items: center;    
 }
 
 .card {
-  width: 150px;
-  height: 150px;
-  background: rgb(199, 145, 145);
-  border: 2px solid #444;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgb(255,0,0) 20%, rgb(255,222,0) 90%);
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -24,13 +22,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.card.shrinking {
+  transform: scale(0.6);
 }
 
 .card:hover {
-  transform: scale(1.05);
+  box-shadow: 0px 0px 9px 2px white;
 }
 
 .poke-img img {
   object-fit: contain;
-  scale: 1.5;
+  scale: 1.4;
 }
