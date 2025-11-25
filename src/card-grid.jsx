@@ -7,7 +7,7 @@ import './index.css'
 import './grid.css'
 
 
-export default function Grid() {
+export default function Grid({difficulty}) {
 
     const [cards, setCards] = useState([])
     const [score, setScore] = useState(0)
@@ -16,7 +16,7 @@ export default function Grid() {
 
     async function loadCards() {
         const newCards = []
-        while (newCards.length < 12) {
+        while (newCards.length < difficulty) {
             const imageUrl = await getRandomPokemon();
             if (newCards.some(card => card.pokeUrl === imageUrl)) { continue }
             newCards.push({ id: uuidv4(), pokeUrl: imageUrl, clicked: false })
@@ -43,12 +43,10 @@ export default function Grid() {
             setCards(shuffled);
             setScore(prev => prev + 1);
 
-            setIsShuffling(false)
-
         }, 300)
     }
 
-    useEffect(() => { loadCards() }, [])
+    useEffect(() => { loadCards() }, [difficulty])
 
     return (
         <>
