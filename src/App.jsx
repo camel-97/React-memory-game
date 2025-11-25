@@ -3,11 +3,20 @@ import Grid from './card-grid'
 import Nav from './navbar'
 import './App.css'
 
+
 function App() {
+  
+  const [difficulty, setDifficulty] = useState(12);
+
   return (
     <>
-      <Nav></Nav>
-      <Grid></Grid>
+      <Nav
+      difficulty={difficulty}
+      setDifficulty={setDifficulty}
+      ></Nav>
+      <Grid
+      difficulty={difficulty}
+      ></Grid>
     </>
   )
 }
