@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import Grid from './card-grid'
+import Nav from './navbar'
 import './App.css'
 
 function App() {
   return (
-    <Grid></Grid>
+    <>
+      <Nav></Nav>
+      <Grid></Grid>
+    </>
   )
 }
 
