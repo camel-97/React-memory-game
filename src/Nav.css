@@ -1,0 +1,18 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    padding-right: 100px;
+    align-items: center;
+}
+
+.nav-bar img {
+    border: none;
+    scale: 0.6;
+    transform: rotateZ(-2deg);
+}
+
+.difficulty-div {
+    display: flex;
+    gap: 15px
+}
