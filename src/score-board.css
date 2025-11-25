@@ -1,0 +1,12 @@
+.score-board {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin: 0 auto ;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(59,76,202);
+    color: rgb(255,222,0);
+}
