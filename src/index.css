@@ -11,7 +11,12 @@ body {
 }
 
 .game-container {
-    height: 100vh
+    height: 100vh;
+    display: flex; 
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 button {

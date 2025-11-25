@@ -35,17 +35,17 @@ export default function Grid() {
             return;
         }
 
-            setTimeout(() => {
-                const updatedCards = cards.map(c =>
-                    c.id === cardId ? { ...c, clicked: true } : c);
+        setTimeout(() => {
+            const updatedCards = cards.map(c =>
+                c.id === cardId ? { ...c, clicked: true } : c);
 
-                const shuffled = shuffle([...updatedCards]);
-                setCards(shuffled);
-                setScore(prev => prev + 1);
+            const shuffled = shuffle([...updatedCards]);
+            setCards(shuffled);
+            setScore(prev => prev + 1);
 
-                setIsShuffling(false)
+            setIsShuffling(false)
 
-            }, 300)
+        }, 300)
     }
 
     useEffect(() => { loadCards() }, [])
@@ -57,14 +57,14 @@ export default function Grid() {
                 highScore={highScore}
             ></Scoreboard>
             <div className="game-container">
-            {gameOver ? (
-                <div className="restart-div">
-                    <button onClick={() => {
-                        setGameOver(false);
-                        loadCards()
-                    }}>Ready to Play Again?</button>
-                </div>
-            ) : (
+                {gameOver ? (
+                    <div className="restart-div">
+                        <button onClick={() => {
+                            setGameOver(false);
+                            loadCards()
+                        }}>Ready to Play Again?</button>
+                    </div>
+                ) : (
                     <div className="grid">
                         {cards.map(card => (
                             <div
@@ -79,7 +79,13 @@ export default function Grid() {
                         )
                         )}
                     </div>
-            )}
+                )}
+                <div className="instructions">
+                    <h2>Rules:</h2>
+                    <p>Click every pokémon in the grid just once... but the cards will shuffle on every click.</p>
+                    <p>Set the difficulty to change how many pokémon there are!</p>
+                    <p>Hope you're paying attention...</p>
+                </div>
             </div>
         </>
     )
