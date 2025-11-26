@@ -25,21 +25,30 @@ export default function Grid({ difficulty }) {
         setCards(newCards);
     }
 
+    function handleEndGame(finalScore) {
+        setRoundScore(finalScore);
+        setHighScore(hs => Math.max(hs, score));
+        setScore(0);
+        setGameOver(true);
+        return;
+        };
+
     function handleClick(cardId) {
         const clickedCard = cards.find(c => c.id === cardId)
         if (clickedCard.clicked) {
-            setGameOver(true);
-            setRoundScore(score);
-            setScore(prevScore => {
-                setHighScore(hs => Math.max(hs, prevScore))
-                return 0;
-            });
-            return;
-        }
+            handleEndGame(score);
+            return 0;
+        };
 
         setTimeout(() => {
             const updatedCards = cards.map(c =>
                 c.id === cardId ? { ...c, clicked: true } : c);
+
+            const allClicked = updatedCards.every(card => card.clicked)
+            if (allClicked) {
+                handleEndGame(difficulty);
+                return;
+            }
 
             const shuffled = shuffle([...updatedCards]);
             setCards(shuffled);
@@ -47,6 +56,7 @@ export default function Grid({ difficulty }) {
 
         }, 300)
     }
+
 
     useEffect(() => { loadCards() }, [difficulty])
 
