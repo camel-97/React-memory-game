@@ -1,13 +1,14 @@
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    padding: 0px;
     padding-right: 100px;
+    height: 100px;
     align-items: center;
 }
 
 .nav-bar img {
     border: none;
+    margin-top: 10px;
     scale: 0.6;
     transform: rotateZ(-2deg);
 }
