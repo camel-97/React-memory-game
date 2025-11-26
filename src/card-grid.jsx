@@ -7,10 +7,11 @@ import './index.css'
 import './grid.css'
 
 
-export default function Grid({difficulty}) {
+export default function Grid({ difficulty }) {
 
     const [cards, setCards] = useState([])
     const [score, setScore] = useState(0)
+    const [roundScore, setRoundScore] = useState(0)
     const [highScore, setHighScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
 
@@ -28,6 +29,7 @@ export default function Grid({difficulty}) {
         const clickedCard = cards.find(c => c.id === cardId)
         if (clickedCard.clicked) {
             setGameOver(true);
+            setRoundScore(score);
             setScore(prevScore => {
                 setHighScore(hs => Math.max(hs, prevScore))
                 return 0;
@@ -57,6 +59,17 @@ export default function Grid({difficulty}) {
             <div className="game-container">
                 {gameOver ? (
                     <div className="restart-div">
+                        <div className="result-div">
+                            {roundScore === difficulty ? (
+                                <div>You did it! You clicked all {difficulty}</div>
+                            ) : (
+                                <>
+                                    <div>Game Over!</div>
+                                    <p>You scored: {roundScore}</p>
+                                </>
+                            )}
+
+                        </div>
                         <button onClick={() => {
                             setGameOver(false);
                             loadCards()
