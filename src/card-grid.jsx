@@ -68,12 +68,13 @@ export default function Grid({ difficulty }) {
             ></Scoreboard>
 
             <div className="game-container" >
+                {gameOver ? (null) : (
                 <div className="instructions">
                     <h2>Rules:</h2>
                     <p>Click every pokémon in the grid just once... but the cards will shuffle on every click.</p>
                     <p>Set the difficulty to change how many pokémon there are!</p>
                     <p>Hope you're paying attention...</p>
-                </div>
+                </div>)}
                 <div className="gap-div"></div>
                 
                 {gameOver ? (
