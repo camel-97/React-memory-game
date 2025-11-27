@@ -1,7 +1,7 @@
 
 .score-board {
     display: flex;
-    min-width: 100vw;
+    width: 100vw;
     gap: 3rem;
     justify-content: center;
     margin: 0 auto ;

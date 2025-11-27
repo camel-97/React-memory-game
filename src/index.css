@@ -2,6 +2,7 @@
     font-family: "Amatic SC", sans-serif;
     font-weight: 700;
     font-style: normal;
+ 
 }
 
 body {
@@ -9,18 +10,10 @@ body {
     background-color: rgb(253, 158, 158);
 }
 
-.game-container {
-    padding: 20px;
-    display: flex; 
-    gap: 3rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 button {
     font-size: 30px;
-    color: rgb(255,222,0);
-    background-color: rgb(59,76,202);
+    color: rgb(255, 222, 0);
+    background-color: rgb(59, 76, 202);
     border-radius: 10px;
     padding: 4px 15px 4px 15px;
 }
@@ -30,3 +23,4 @@ button:hover {
     box-shadow: 2px 2px;
     transform: translateY(-3px);
 }
+
