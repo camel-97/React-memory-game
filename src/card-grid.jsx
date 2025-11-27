@@ -89,7 +89,7 @@ export default function Grid({ difficulty }) {
                             )}
 
                         </div>
-                        <button onClick={() => {
+                        <button className="play-again" onClick={() => {
                             setGameOver(false);
                             loadCards()
                         }}>Ready to Play Again?</button>
