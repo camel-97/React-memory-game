@@ -66,8 +66,8 @@ export default function Grid({ difficulty }) {
                 score={score}
                 highScore={highScore}
             ></Scoreboard>
-            <div className="game-container" >
-                {gameOver ? (
+            {gameOver ? (
+                <div className="wrapper">
                     <div className="restart-div">
                         <div className="result-div">
                             {roundScore === difficulty ? (
@@ -85,7 +85,11 @@ export default function Grid({ difficulty }) {
                             loadCards()
                         }}>Ready to Play Again?</button>
                     </div>
-                ) : (
+                </div>) : (
+                null
+            )}
+            <div className="game-container" >
+                {gameOver ? (null) : (
                     <>
                         <div className="instructions">
                             <h2>Rules:</h2>

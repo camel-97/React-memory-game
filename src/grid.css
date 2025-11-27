@@ -41,7 +41,7 @@
   scale: 1.4;
 }
 
-.instructions, .restart-div {
+.instructions {
   max-height: fit-content;
   align-self: center;
   text-align: center;
@@ -57,9 +57,31 @@
 }
 
 .restart-div {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
   margin-top: 50px;
-  padding-top: 20px
+  justify-self: center;
+  padding-top: 20px;
+  background-color: rgb(59,76,202);
+  color: rgb(255,222,0);
+  border-radius: 10px;
+  box-shadow: 4px 4px rgb(255,222,0);
 }
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 999;
+}
+
 
 .play-again {
   margin: 20px;
@@ -114,8 +136,8 @@
     .card:hover .poke-img img {
     scale: 1.4;
     }
-
-
-    
+    .restart-div {
+      max-width: 250px;
+    }  
 }
 
