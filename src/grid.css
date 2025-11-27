@@ -41,7 +41,7 @@
   scale: 1.4;
 }
 
-.instructions {
+.instructions, .restart-div {
   max-height: fit-content;
   align-self: center;
   text-align: center;
@@ -54,6 +54,15 @@
   box-shadow: 4px 4px rgb(255,222,0);
   grid-area: rules;
   justify-self: center;
+}
+
+.restart-div {
+  padding-top: 20px
+}
+
+.play-again {
+  margin: 20px;
+  border-color: rgb(255,0,0)
 }
 
 
