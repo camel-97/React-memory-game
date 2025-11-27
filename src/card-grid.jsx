@@ -27,7 +27,7 @@ export default function Grid({ difficulty }) {
 
     function handleEndGame(finalScore) {
         setRoundScore(finalScore);
-        setHighScore(hs => Math.max(hs, score));
+        setHighScore(hs => Math.max(hs, finalScore));
         setScore(0);
         setGameOver(true);
         return;
