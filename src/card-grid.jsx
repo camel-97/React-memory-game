@@ -66,55 +66,51 @@ export default function Grid({ difficulty }) {
                 score={score}
                 highScore={highScore}
             ></Scoreboard>
-            {gameOver ? (
-                <div className="restart-div">
-                    <div className="result-div">
-                        {roundScore === difficulty ? (
-                            <div>You did it! You clicked all {difficulty}</div>
-                        ) : (
-                            <>
-                                <div>Game Over!</div>
-                                <p>You scored: {roundScore}</p>
-                            </>
-                        )}
-
-                    </div>
-                    <button className="play-again" onClick={() => {
-                        setGameOver(false);
-                        loadCards()
-                    }}>Ready to Play Again?</button>
-                </div>
-            ) :
-                (null)}
             <div className="game-container" >
-                {gameOver ? (null) : (
-                    <div className="instructions">
-                        <h2>Rules:</h2>
-                        <p>Click every pokémon in the grid just once... but the cards will shuffle on every click.</p>
-                        <p>Set the difficulty to change how many pokémon there are!</p>
-                        <p>Hope you're paying attention...</p>
-                    </div>)}
-                <div className="gap-div"></div>
+                {gameOver ? (
+                    <div className="restart-div">
+                        <div className="result-div">
+                            {roundScore === difficulty ? (
+                                <div>You did it! You clicked all {difficulty}</div>
+                            ) : (
+                                <>
+                                    <div>Game Over!</div>
+                                    <p>You scored: {roundScore}</p>
+                                </>
+                            )}
 
-                {gameOver ? (null) : (
-                    <div className="grid">
-                        {cards.map(card => (
-                            <div
-                                className="card"
-                                key={card.id}
-                            >
-                                <div className="poke-img">
-                                    <img src={card.pokeUrl} onClick={() => handleClick(card.id)}
-                                    />
-                                </div>
-                            </div>
-                        )
-                        )}
+                        </div>
+                        <button className="play-again" onClick={() => {
+                            setGameOver(false);
+                            loadCards()
+                        }}>Ready to Play Again?</button>
                     </div>
+                ) : (
+                    <>
+                        <div className="instructions">
+                            <h2>Rules:</h2>
+                            <p>Click every pokémon in the grid just once... but the cards will shuffle on every click.</p>
+                            <p>Set the difficulty to change how many pokémon there are!</p>
+                            <p>Hope you're paying attention...</p>
+                        </div>
+                        <div className="gap-div"></div>
+                        <div className="grid">
+                            {cards.map(card => (
+                                <div
+                                    className="card"
+                                    key={card.id}
+                                >
+                                    <div className="poke-img">
+                                        <img src={card.pokeUrl} onClick={() => handleClick(card.id)}
+                                        />
+                                    </div>
+                                </div>
+                            )
+                            )}
+                        </div>
+                    </>
                 )}
             </div>
-
-
         </>
     )
 }
