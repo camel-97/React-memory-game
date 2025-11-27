@@ -31,7 +31,7 @@ export default function Grid({ difficulty }) {
         setScore(0);
         setGameOver(true);
         return;
-        };
+    };
 
     function handleClick(cardId) {
         const clickedCard = cards.find(c => c.id === cardId)
@@ -66,14 +66,16 @@ export default function Grid({ difficulty }) {
                 score={score}
                 highScore={highScore}
             ></Scoreboard>
-            
-            <div className="game-container">
+
+            <div className="game-container" >
                 <div className="instructions">
                     <h2>Rules:</h2>
                     <p>Click every pokémon in the grid just once... but the cards will shuffle on every click.</p>
                     <p>Set the difficulty to change how many pokémon there are!</p>
                     <p>Hope you're paying attention...</p>
                 </div>
+                <div className="gap-div"></div>
+                
                 {gameOver ? (
                     <div className="restart-div">
                         <div className="result-div">
@@ -108,8 +110,9 @@ export default function Grid({ difficulty }) {
                         )}
                     </div>
                 )}
-                
-            </div>
+                </div>
+
+            
         </>
     )
 }
